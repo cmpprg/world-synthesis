@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import heartImage from './assets/red_heart.gif'
-import './App.css'
 
 const App = () => {
   const [answer, setAnswer] = useState("");
