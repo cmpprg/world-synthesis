@@ -19,14 +19,10 @@ jobs:
 
       - name: install yarn
         run: npm install yarn
-      
-      - name: navigate to fe dir
-        run: cd ./world_synthesis_fe
 
       - name: build fe
-        run: |
-          pwd
-          yarn run build
+        working-directory: ./world_synthesis_fe
+        run: yarn run build
 
       - name: deploy to gh-page branch
         uses: s0/git-publish-subdir-action@develop
