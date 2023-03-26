@@ -20,6 +20,10 @@ jobs:
       - name: install yarn
         run: npm install yarn
 
+      - name: install js dependencies
+        working-directory: ./world_synthesis_fe
+        run: yarn install
+
       - name: build fe
         working-directory: ./world_synthesis_fe
         run: yarn run build
