@@ -1,31 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import heartImage from './assets/red_heart.gif'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [answer, setAnswer] = useState("");
+
+  const handleButtonClick = () => {
+    setAnswer("To the end of the cul-de-sac.")
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
       <h1>World Synthesis</h1>
-      <h2>We will create a better world</h2>
+      <h2>Synthesizing a better world through collaboration</h2>
+
+      <div style={{display: "flex", justifyContent: "space-around", alignItems: "center"}}>
+        <h3>How much does Ryan</h3>
+        <img src={heartImage} className="heart" alt="heart love" />
+        <h3>Michelle?</h3>
+      </div>
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button style={{border: '1px solid black'}}onClick={handleButtonClick}>
+          Click me to find out
         </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>{answer}</h1>
     </div>
   )
 }
