@@ -1,0 +1,38 @@
+name: Build and Deploy to Github Page
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: install yarn
+        run: npm install yarn
+      
+      - name: navigate to fe dir
+        run: cd ./world_synthesis_fe
+
+      - name: build fe
+        run: yarn run build
+
+      - name: deploy to gh-page branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+
+          
