@@ -7,8 +7,14 @@ export default defineConfig({
   server: {
     port: 3000,
     strictPort: true,
+    open: true
   },
   build: {
     outDir: "../dist"
+  },
+  preview: {
+    port: 3001,
+    strictPort: true,
+    open: true,
   }
 })
