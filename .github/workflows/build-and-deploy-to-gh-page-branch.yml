@@ -24,6 +24,7 @@ jobs:
         run: cd ./world_synthesis_fe
 
       - name: build fe
+        run: pwd
         run: yarn run build
 
       - name: deploy to gh-page branch
