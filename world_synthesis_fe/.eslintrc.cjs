@@ -9,10 +9,9 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    "plugin:prettier/recommended",
   ],
-  overrides: [
-    linebreak-style: "off",
-  ],
+  overrides: [],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
@@ -24,6 +23,16 @@ module.exports = {
     "@typescript-eslint"
   ],
   rules: {
-    
+    "linebreak-style": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function",
+      },
+    ],
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
+    "comma-dangle": ["error", "always-multiline"],
   }
 };
