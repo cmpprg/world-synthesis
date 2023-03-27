@@ -34,5 +34,13 @@ module.exports = {
     "quotes": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     "comma-dangle": ["error", "always-multiline"],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": 0,
   }
 };
