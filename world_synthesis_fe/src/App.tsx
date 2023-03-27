@@ -1,11 +1,13 @@
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Theme from "Theme";
 import Homepage from "pages/Homepage";
 
 const App = () => {
   return (
-    <CssBaseline>
+    <ThemeProvider theme={Theme}>
+      <CssBaseline />
       <Homepage />
-    </CssBaseline>
+    </ThemeProvider>
   );
 };
 
