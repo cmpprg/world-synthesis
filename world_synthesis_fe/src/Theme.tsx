@@ -1,18 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 
-let theme = createTheme();
-
-theme = createTheme(theme, {
+const theme = createTheme({
   palette: {
-    primary: {
-      main: "#000000",
-    },
-    secondary: {
-      main: "#000000",
-    },
-    text: {
-      primary: "#000000",
-    },
+    // mode: "dark",
   },
   typography: {
     fontFamily: "Roboto",

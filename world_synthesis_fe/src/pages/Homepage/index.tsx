@@ -9,7 +9,7 @@ const Homepage = () => (
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center",
-      height: "70%",
+      height: "75%",
     }}
   >
     <Box>
@@ -28,13 +28,13 @@ const Homepage = () => (
       sx={{
         display: "flex",
         justifyContent: "space-around",
-        paddingTop: "2rem",
+        paddingTop: "3rem",
       }}
     >
-      <Button variant="contained" color="primary" sx={{ width: "20%" }}>
+      <Button variant="contained" color="primary" sx={{ width: "25%" }}>
         Mission
       </Button>
-      <Button variant="contained" color="secondary" sx={{ width: "20%" }}>
+      <Button variant="contained" color="primary" sx={{ width: "25%" }}>
         Rules and Regulations
       </Button>
     </ButtonGroup>
