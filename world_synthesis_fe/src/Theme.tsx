@@ -1,9 +1,28 @@
-import { createTheme } from "@mui/material/styles";
+import { colors } from "@mui/material";
+import { createTheme, Opacity } from "@mui/material/styles";
+import { colorOpacity } from "utils/colorOpacityUtils";
 
-const theme = createTheme({
+// Palette
+let theme = createTheme({
   palette: {
     mode: "dark",
+    primary: {
+      light: colors.blue[300],
+      main: colors.blue[500],
+      dark: colors.blue[700],
+      contrastText: colors.common.white,
+    },
+    secondary: {
+      light: colors.green[300],
+      main: colors.green[500],
+      dark: colors.green[700],
+      contrastText: colors.common.white,
+    },
   },
+});
+
+// Typography
+theme = createTheme(theme, {
   typography: {
     fontFamily: "Roboto",
     h1: {
@@ -29,6 +48,28 @@ const theme = createTheme({
     },
     body2: {
       fontSize: "0.875rem",
+    },
+  },
+});
+
+console.log(theme.palette.primary.main);
+// Component Defaults
+theme = createTheme(theme, {
+  components: {
+    MuiDialog: {
+      styleOverrides: {
+        container: {
+          paddingBottom: "1rem",
+        },
+      },
+    },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
+          backgroundColor: colorOpacity(theme.palette.primary.main, "10%"),
+        },
+      },
     },
   },
 });
