@@ -1,5 +1,6 @@
 import React from "react";
-import { Dialog, DialogTitle, DialogContent } from "@mui/material";
+import GSDialogText from "components/GSDialogText";
+import { Typography } from "@mui/material";
 
 export interface RulesAndRegulationsProps {
   open: boolean;
@@ -10,12 +11,15 @@ const RulesAndRegulations = (props: RulesAndRegulationsProps) => {
   const { open, handleClose } = props;
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Rules and Regulations</DialogTitle>
-      <DialogContent>
-        Some dialog content here for your Rules and Regulations.
-      </DialogContent>
-    </Dialog>
+    <GSDialogText
+      open={open}
+      handleClose={handleClose}
+      title="Rules and Regulations"
+    >
+      <Typography variant="body1">
+        Placeholder content for Rules and Regulations.
+      </Typography>
+    </GSDialogText>
   );
 };
 

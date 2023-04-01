@@ -1,5 +1,6 @@
+import { Typography } from "@mui/material";
+import GSDialogText from "components/GSDialogText";
 import React from "react";
-import { Dialog, DialogTitle, DialogContent } from "@mui/material";
 
 export interface MissionStatementProps {
   open: boolean;
@@ -10,12 +11,15 @@ const MissionStatement = (props: MissionStatementProps) => {
   const { open, handleClose } = props;
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>Mission Statment</DialogTitle>
-      <DialogContent>
-        Some dialog content here for your mission statement.
-      </DialogContent>
-    </Dialog>
+    <GSDialogText
+      open={open}
+      handleClose={handleClose}
+      title="Mission Statement"
+    >
+      <Typography variant="body1">
+        Placeholder content for Mission Statment.
+      </Typography>
+    </GSDialogText>
   );
 };
 
