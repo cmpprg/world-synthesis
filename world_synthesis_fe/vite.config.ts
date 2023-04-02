@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -8,6 +9,11 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
   ],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "test.setup.js",
+  },
   server: {
     port: 3000,
     strictPort: true,
@@ -20,5 +26,5 @@ export default defineConfig({
     port: 3001,
     strictPort: true,
     open: true,
-  }
+  },
 })
