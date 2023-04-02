@@ -11,7 +11,14 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     "plugin:prettier/recommended",
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ["/utils/**/*"],
+      rules: { 
+        "import/prefer-default-export": "off",
+      },
+    },
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
