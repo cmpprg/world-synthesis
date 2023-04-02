@@ -69,7 +69,7 @@ const Homepage = () => {
             sx={{ width: "25%" }}
             onClick={handleOpenRulesAndRegulations}
           >
-            Rules and Regulations
+            Rules
           </Button>
         </ButtonGroup>
       </Container>
