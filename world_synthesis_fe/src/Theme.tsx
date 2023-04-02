@@ -1,6 +1,6 @@
 import { colors } from "@mui/material";
-import { createTheme, Opacity } from "@mui/material/styles";
-import { colorOpacity } from "utils/colorOpacityUtils";
+import { createTheme } from "@mui/material/styles";
+import { colorOpacity } from "utils/colorUtils";
 
 // Palette
 let theme = createTheme({
@@ -52,7 +52,6 @@ theme = createTheme(theme, {
   },
 });
 
-console.log(theme.palette.primary.main);
 // Component Defaults
 theme = createTheme(theme, {
   components: {
@@ -66,7 +65,6 @@ theme = createTheme(theme, {
     MuiBackdrop: {
       styleOverrides: {
         root: {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-assignment
           backgroundColor: colorOpacity(theme.palette.primary.main, "10%"),
         },
       },

@@ -108,6 +108,4 @@ const colorOpacity = (color: string, opacityPercent: string): string => {
   return color + opacityHex;
 };
 
-export default {
-  colorOpacity,
-};
+export { colorOpacity };
